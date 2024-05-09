@@ -7,8 +7,6 @@ const ArmeniaMap = ({ google }) => {
   const [autoCompleteService, setAutoCompleteService] = useState(null);
   const [selectedMarker, setSelectedMarker] = useState(null);
   const [searchResults, setSearchResults] = useSearchResults();
-  const [searchResultsData, setSearchResultsData] = useState([]);
-
   const mapRef = useRef(null);
 
   useEffect(() => {
@@ -129,9 +127,8 @@ const ArmeniaMap = ({ google }) => {
               )
           )}
         </Map>
-
         {selectedMarker && (
-          <div className="popup rounded-lg flex relative left-10 top-2 bg-white w-1/3  text-2xl ">
+          <div className="popup rounded-lg flex absolute left-10 top-2 bg-white w-1/3  text-2xl ">
             <img
               className="mx-auto rounded-2xl p-2 w-1/2"
               src={selectedMarker.img}
@@ -148,7 +145,6 @@ const ArmeniaMap = ({ google }) => {
             </div>
           </div>
         )}
-
         <form
           className="absolute top-0 left-1/2 transform -translate-x-1/2 mt-4"
           onSubmit={handleSearchSubmit}

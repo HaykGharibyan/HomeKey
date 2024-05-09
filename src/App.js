@@ -1,19 +1,23 @@
 import "./App.css";
+import ArqVacharq from "./components/ArqVacharq";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
-import HelpSection from "./components/helpSection/HelpSection";
-import Main from "./components/main/Main";
-import ArmeniaMap from "./components/map/ArmeniaMap";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePageComponents from "./components/HomePageComponents";
 
 function App() {
   return (
-    <div>
-      <Header />
-      <Main />
-      <HelpSection />
-      <ArmeniaMap />
-      <Footer />
-    </div>
+    <Router>
+      <div>
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePageComponents />} />
+          <Route path="arqVacharq" element={<ArqVacharq />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "../../img/home.png";
+import { Link, Outlet } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -8,14 +9,14 @@ export default function Header() {
         <div className="mx-5 flex items-center">
           <img src={Logo} alt="logo" />
           <strong className="mx-3 text-neutral-100 text-3xl whitespace-nowrap">
-            <a href=""> HomeKey</a>
+            <Link to="/">Homekey</Link>
           </strong>
           <div className="flex mx-10 gap-5">
             <button className="text-white transition duration-300 hover:text-neutral-200 hover:scale-105">
-              Առք/Վաճառք
+              <Link to="/arqVacharq">Առք/Վաճառք</Link>
             </button>
             <button className="text-white transition duration-300 hover:text-neutral-200 hover:scale-105">
-              Վարձակալություն
+              <Link to="/varcakalutyun">Վարձակալություն</Link>
             </button>
           </div>
         </div>
@@ -25,6 +26,7 @@ export default function Header() {
           </button>
         </div>
       </div>
+      <Outlet />
     </div>
   );
 }
