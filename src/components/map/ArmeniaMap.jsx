@@ -89,7 +89,7 @@ const ArmeniaMap = ({ google }) => {
     {
       featureType: "administrative.country",
       elementType: "geometry.stroke",
-      stylers: [{ weight: 5, visibility: "on" }],
+      stylers: [{ weight: 5 }],
     },
     {
       featureType: "administrative.province",
