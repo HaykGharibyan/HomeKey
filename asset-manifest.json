@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/HomeKey/static/css/main.36feab90.css",
+    "main.js": "/HomeKey/static/js/main.1b6503e9.js",
+    "static/media/fon.jpg": "/HomeKey/static/media/fon.21491c80e8ae30836c4c.jpg",
+    "static/media/City2.png": "/HomeKey/static/media/City2.e3a8a80d4a1a7b0a31f8.png",
+    "index.html": "/HomeKey/index.html",
+    "main.36feab90.css.map": "/HomeKey/static/css/main.36feab90.css.map",
+    "main.1b6503e9.js.map": "/HomeKey/static/js/main.1b6503e9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.36feab90.css",
+    "static/js/main.1b6503e9.js"
+  ]
+}
