@@ -11,6 +11,7 @@ function App() {
     <Router>
       <div>
         <Header />
+
         <Routes>
           <Route path="/" element={<HomePageComponents />} />
           <Route path="arqVacharq" element={<ArqVacharq />} />
