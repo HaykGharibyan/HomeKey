@@ -1,10 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../../img/home.png";
 import { Link, Outlet } from "react-router-dom";
 
 export default function Header() {
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY) {
+        // Scrolling down
+        setIsHeaderVisible(false);
+      } else {
+        // Scrolling up
+        setIsHeaderVisible(true);
+      }
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
   return (
-    <div className="bg-emerald-600">
+    <div
+      className={`fixed top-0 z-50 w-full transition-transform duration-300 ${
+        isHeaderVisible ? "translate-y-0" : "-translate-y-full"
+      } bg-emerald-600`}
+    >
       <div className="container p-4 mx-auto w-full h-full flex flex-row items-center justify-between">
         <div className="mx-5 flex items-center">
           <img src={Logo} alt="logo" />
